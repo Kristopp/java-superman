@@ -1,0 +1,41 @@
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+mainClassName = "com.nortal.clark.training.assignment.MainClass"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.28'
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
+    compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.4'
+    compile group: 'com.esotericsoftware', name: 'kryo', version: '4.0.2'
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
+
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
+    testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '2.2'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.2'
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.2'
+}
+
+test {
+    /* Pass on single property */
+    systemProperty "simulator.disable.gui", System.getProperty("simulator.disable.gui")
+    useJUnitPlatform()
+}
+
+String logo = " _   _  ___  ____ _____  _    _\n" +
+        "| \\ | |/ _ \\|  _ \\_   _|/ \\  | |          _   _   _   _   _   _   _   _\n" +
+        "|  \\| | | | | |_) || | / _ \\ | |         / \\ / \\ / \\ / \\ / \\ / \\ / \\ / \\\n" +
+        "| |\\  | |_| |  _ < | |/ ___ \\| |___     ( S ( u ( p ( e ( r ( M ( a ( n )\n" +
+        "|_| \\_|\\___/|_| \\_\\|_/_/   \\_\\_____|     \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/\n";
+
+logger.warn(logo)

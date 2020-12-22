@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="java-superman.main" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.nortal.clark.training.assignment.MainClass" />
+    <module name="java-superman.main" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
